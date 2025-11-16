@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int l, r;
+    scanf("%d %d", &l, &r);
+
+    for (int n = l; n <= r; n++) {
+        int temp = n, digits = 0, sum = 0;
+
+        for (int t = n; t > 0; t /= 10) {
+            digits++;
+        }
+
+        for (temp = n; temp > 0; temp /= 10) {
+            sum = sum + pow(temp % 10, digits);
+        }
+
+        if (sum == n) {
+            printf("%d ", n);
+        }
+    }
+
+    return 0;
+}
